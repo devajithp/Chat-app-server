@@ -11,7 +11,7 @@ app.use(json())
 connectDB()
 const server= require("http").createServer(app)
 
-const io= new Server(server,{cors:{origin:"https://devajithp.github.io/Chat-app-client",methods:["GET","POST"]}})
+const io= new Server(server,{cors:{origin:"*",methods:["GET","POST"]}})
 
 io.on("connection",(socket)=>
 {
@@ -36,7 +36,7 @@ socket.on("send_message",(data)=>
     
 })
 })
-app.use(cors({origin:"https://devajithp.github.io",methods:["GET","POST"]}))
+app.use(cors({origin:"*",methods:["GET","POST"]}))
 app.get("/:id",(req,res)=>
 {
     let room=req.params.id
