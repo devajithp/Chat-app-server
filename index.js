@@ -6,7 +6,8 @@ const {Server} = require("socket.io")
 const mongoose= require("mongoose")
 const connectDB= require("./Database/Connection/connection")
 const Chat= require("./Database/Models/Chat")
-
+const { json } = require("express")
+app.use(json())
 connectDB()
 const server= require("http").createServer(app)
 
