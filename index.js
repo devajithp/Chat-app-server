@@ -36,7 +36,7 @@ socket.on("send_message",(data)=>
     
 })
 })
-app.use(cors({origin:"https://devajithp.github.io/Chat-app-client",methods:["GET","POST"]}))
+app.use(cors({origin:"https://devajithp.github.io",methods:["GET","POST"]}))
 app.get("/:id",(req,res)=>
 {
     let room=req.params.id
